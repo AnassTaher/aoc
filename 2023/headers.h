@@ -31,4 +31,5 @@ std::vector<std::string> input(){
   return inp;
 }
 
+
 using namespace std;

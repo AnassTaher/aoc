@@ -45,10 +45,7 @@ int get_ex2(std::vector<std::string>& input)
 
   for (const int& nbr : list1)
   {
-    if (std::find(list2.begin(), list2.end(), nbr) != list2.end())
-    {
       similarity_score += freq_map[nbr] * nbr;
-    }
   }
 
   return similarity_score;

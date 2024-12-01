@@ -58,12 +58,12 @@ int main(int argc, char* argv[])
       file_type_name = "small";
       break;
     case 2:
-      file_type_name = "input";
+      file_type_name = "full";
       break;
     default:
       break;
   }
-  std::cout << "Proceeding with " + file_type_name + " input\n";
+  std::cout << "\nProceeding with " + file_type_name + " input\n\n";
 
 
 
@@ -74,27 +74,27 @@ int main(int argc, char* argv[])
 
   if (exercise_nbr == 0 || exercise_nbr == 1)
   {
-    std::cout << "Ex1\n";
+    std::cout << "Running ex1\n";
     res_1 = get_ex1(input);
-    std::cout << "Result Ex1 = " << res_1 << "\n";
+    std::cout << "Result ex1 = " << res_1 << "\n\n";
   }
   
   if (exercise_nbr == 0 || exercise_nbr == 2)
   {
-    std::cout << "Ex2\n";
+    std::cout << "Running ex2\n";
     res_2 = get_ex2(input);
-    std::cout << "Result Ex2 = " << res_2 << "\n";
+    std::cout << "Result ex2 = " << res_2 << "\n\n";
   }
 
   if (!res_1)
   {
-    std::cerr << "Error: Ex1 failed\n";
+    std::cerr << "Error: ex1 failed\n";
     return EXIT_FAILURE;
   }
 
   if (!res_2)
   {
-    std::cerr << "Error: Ex2 Failed\n";
+    std::cerr << "Error: ex2 Failed\n";
     return EXIT_FAILURE;
   }
  

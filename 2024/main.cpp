@@ -7,10 +7,10 @@
 bool get_ex1(std::vector<std::string>& input, bool debug);
 bool get_ex2(std::vector<std::string>& input, bool debug);
 
-std::vector<std::string> get_input(int day)
+std::vector<std::string> get_input(int day, std::string& file_type_name)
 {
-  std::string input_file_name = std::to_string(day) + "input.txt";
-  freopen(input_file_name.c_str(), "r", stdin);
+  std::string input_file_type_name = std::to_string(day) + "/" + file_type_name + ".txt";
+  freopen(input_file_type_name.c_str(), "r", stdin);
   std::vector<std::string> input;
   std::string s = "";
   while(getline(std::cin, s))
@@ -44,8 +44,30 @@ int main(int argc, char* argv[])
     debug = atoi(argv[2]);
     std::cout << "Running program in debug mode" << std::endl;
   }
+
+  std::cout << "Which input would you like to choose?\n"
+               "\t1) Small input\n"
+               "\t2) Full input\n";
+  int choice = 0;
+  std::string file_type_name = "small";
+  std::cin >> choice;
   
-  std::vector<std::string> input = get_input(day);
+  switch (choice)
+  {
+    case 1:
+      file_type_name = "small";
+      break;
+    case 2:
+      file_type_name = "full";
+      break;
+    default:
+      break;
+  }
+  std::cout << "Proceeding with " + file_type_name + " input\n";
+
+
+
+  std::vector<std::string> input = get_input(day, file_type_name);
   bool res_1 = get_ex1(input, debug);
   bool res_2 = get_ex2(input, debug);
 

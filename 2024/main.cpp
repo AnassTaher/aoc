@@ -68,14 +68,22 @@ int main(int argc, char* argv[])
 
 
   std::vector<std::string> input = get_input(day, file_type_name);
+  
+  int res_1 = -1, res_2 = -1;
 
-  std::cout << "Ex1\n";
-  int res_1 = get_ex1(input, exercise_nbr);
-  std::cout << "Result Ex1 = " << res_1 << "\n";
-
-  std::cout << "Ex2\n";
-  int res_2 = get_ex2(input, exercise_nbr);
-  std::cout << "Result Ex2 = " << res_1 << "\n";
+  if (exercise_nbr == 0 || exercise_nbr == 1)
+  {
+    std::cout << "Ex1\n";
+    res_1 = get_ex1(input, exercise_nbr);
+    std::cout << "Result Ex1 = " << res_1 << "\n";
+  }
+  
+  if (exercise_nbr == 0 || exercise_nbr == 2)
+  {
+    std::cout << "Ex2\n";
+    res_2 = get_ex2(input, exercise_nbr);
+    std::cout << "Result Ex2 = " << res_1 << "\n";
+  }
 
   if (!res_1)
   {
